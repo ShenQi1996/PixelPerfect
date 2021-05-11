@@ -19,4 +19,4 @@ export const loginUser = formUser => dispatch =>
   login(formUser).then(user => dispatch(receiveCurrentUser(user)));
 
 export const logoutUser = () => dispatch =>
-  logout().then(() => dispatch(logoutCurrentUser));
+  logout().then(() => dispatch(logoutCurrentUser()));
