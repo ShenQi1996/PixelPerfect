@@ -1,0 +1,12 @@
+put node js first then ruby  for add buildpack
+
+
+
+heroku stack:set heroku-18  ---  change the verson of heroku
+
+
+fixt error ==  go to the config not the one in app.    then environments then production and remove line 26  
+
+
+create the databacse on the heroku side.  == heroku run bundle exec rails db:migrate
+                                            heroku run bundle exec rails db:seed
