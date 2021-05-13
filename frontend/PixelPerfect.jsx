@@ -5,15 +5,21 @@ import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  let oldState = undefined;
+  let store; 
   if(window.currentUser){
+    let oldState;
     oldState = {
-      session: {
-        currentUser: window.currentUser
-      }
+      session: {currentUser: window.currentUser.id},
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser}
+      },
     };
+    store = configureStore(oldState);
+    delete window.currentUser;
+  }else{
+    store = configureStore()
   }
-  const store = configureStore(oldState)
+
   window.store = store
 
   ReactDOM.render(<Root store={store}/>, root);

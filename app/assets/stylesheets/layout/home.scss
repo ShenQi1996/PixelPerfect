@@ -1,0 +1,176 @@
+.body_box {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.top-image {
+  background-image: image-url("Home/Home.png");
+  background-size: cover;
+  display: inline-block;
+  position: relative;
+  width: 100vw;
+  padding-top: calc(0.46 * 100vw);
+}
+
+.top-image .top-image-content {
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  max-width: 30%;
+  text-align: left;
+  opacity: 0.9;
+  padding: 30px 30px;
+  border-radius: 10px;
+}
+
+.top-image-content > h2 {
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: black;
+  margin-bottom: 15px;
+  line-height: 110%;
+}
+
+.top-image-content > p {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+  line-height: 120%;
+}
+
+.top-image-content > button {
+  font-size: 24px;
+  border-radius: 40px;
+  padding: 5px 15px 5px 15px;
+  width: 220px;
+  height: 60px;
+  border: none;
+}
+
+.top-image-content > button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+.about-pinhole {
+  margin: auto;
+}
+
+.about-pinhole > h3 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  line-height: 200%;
+  margin-bottom: 40px;
+}
+
+.about-pinhole .about-content {
+  display: inline-block;
+  width: 28%;
+  font-size: 20px;
+  padding: 10px;
+  vertical-align: top;
+  margin-left: 3%;
+}
+
+.about-content > h4 {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.about-content > p {
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.plant {
+  display: block;
+  background-image: image-url("Home/Plant.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(0.1 * 600px);
+  height: calc(0.1 * 600px);
+  margin-bottom: 10px;
+}
+.ruler {
+  display: block;
+  background-image: image-url("Home/Ruler.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(0.1 * 600px);
+  height: calc(0.1 * 600px);
+  margin-bottom: 10px;
+}
+.statistics {
+  display: block;
+  background-image: image-url("Home/Statistics.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(0.1 * 600px);
+  height: calc(0.1 * 600px);
+  margin-bottom: 10px;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #45457c;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  margin-top: 20px;
+}
+.bottom-bar-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottom-bar-content > h3 {
+  color: white;
+  font-weight: bolder;
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.bottom-bar-content > p {
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 60%;
+}
+
+.bottom-bar-content > button {
+  font-size: 24px;
+  border-radius: 40px;
+  padding: 5px 15px 5px 15px;
+  width: 220px;
+  height: 60px;
+  color: black;
+  text-decoration: none;
+  border: none;
+}
+
+.bottom-bar-content > button:hover {
+  color: #1890ff;
+  cursor: pointer;
+}
+
+div footer {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 24px;
+}
+
+.link_with_no_underLine {
+  text-decoration: none;
+  color: inherit;
+}

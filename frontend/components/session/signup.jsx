@@ -1,22 +1,20 @@
 import React from "react"
-
+import { Link } from 'react-router-dom';
 
 class Signup extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            form: 0,
             username: "",
             email: "",
-            firstname: "",
-            lastname: "",
             password: "",
-            aboutMe: ""
+            eError: false,
+            pError: false,
         },
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.demoSubmit = this.demoSubmit.bind(this)
-        this.nextform = this.nextform.bind(this)
+
     }
 
     handleInput(type){
@@ -24,12 +22,35 @@ class Signup extends React.Component{
             this.setState({[type]: e.target.value})
         }
     }
+    componentDidMount(){
+        this.props.clearErrors()
+    }
 
     handleSubmit(e){
         e.preventDefault()
-        this.props.createNewUser(this.state)
-            .then(() => this.props.history.push("/")); 
-            // need to change this later 
+        if(this.passwordError() == false && this.emailError() !== false){
+            this.setState({pError: false})
+            this.props.clearErrors()
+        }else if (this.passwordError() !== false && this.emailError() == false){
+            this.setState({eError: false})
+            this.props.clearErrors()
+        }else if (this.passwordError() == false && this.emailError() == false) {
+            this.setState({eError: false})
+            this.setState({pError: false})
+            this.props.createNewUser(this.state)
+        }
+    }
+
+    
+    handleError(){
+        const {errors} = this.props
+        return(
+            <ul>
+                {errors.map((error, idx) => (
+                    <li key={idx}>{error}</li> 
+                ))}
+            </ul>
+        )
     }
 
     demoSubmit(e){
@@ -37,63 +58,50 @@ class Signup extends React.Component{
         const demoUser ={
             username: "test1",
             email: "test@gmail.com",
-            lastname: "test",
-            firstname: "test",
-            password: "123456"
+            password: "12345678"
         }
         this.props.createNewUser(demoUser)
     }
     
-    nextform(num){
-        return e =>{
-            e.preventDefault()
-            this.setState({form: num})
+
+    emailError(){
+        if(this.state.email.includes('.com')){
+            return false;
         }
+        this.setState({eError: true});
+    }
+
+    passwordError(){
+        if(this.state.password.length >= 8){
+            return false;
+        }
+        this.setState({pError: true});
     }
 
     render(){
-
-        if(this.state.form === 0){
             return (
-                <div>
-                    <h1>Sign Up</h1>
-                    <form >
-                        <label>Email
-                            <input type="text" value={this.state.email} onChange={this.handleInput("email")} />
+                <div className="LS_form_container">
+                    <div className="errors">{this.handleError()}</div>
+                    <form className="LS_form">
+                        <h2>Sign Up</h2>
+                        {/* <div classNam="look"><p>or</p></div> */}
+                        <label>Email 
+                            <input className="LS_Input" type="text" value={this.state.email} onChange={this.handleInput("email")} />
                         </label>
-                        <label>Password
-                            <input type="password" value={this.state.password} onChange={this.handleInput("password")} />
-                        </label>
-                        <button onClick={this.demoSubmit}>Demo Sign Up</button>
-                        <button onClick={this.nextform(1)}>Sign Up</button>
-                    </form>
-                </div>
-            )
-        }
-        if(this.state.form ===1){
-            return (
-                <div>
-                    <h1>Sign Up</h1>
-                    <form>
-                        <label>Username
+                            {this.state.eError ? <p className="errors">Please enter a valid email address</p> : null}
+                        {/* <label>Username
                             <input type="text" value={this.state.username} onChange={this.handleInput("username")} />
+                        </label> */}
+                        <label>Password
+                            <input className="LS_Input" type="password" value={this.state.password} placeholder="(minimum 8 characters)" onChange={this.handleInput("password")} />
                         </label>
-                        <label>Lastname:
-                            <input type="text" value={this.state.lastname} onChange={this.handleInput("lastname")} />
-                        </label>
-                        <label>Firstname:
-                            <input type="text" value={this.state.firstname} onChange={this.handleInput("firstname")} />
-                        </label>
-                        <label>AboutMe:
-                            <textarea  cols="30" rows="10"   value={this.state.aboutMe} onChange={this.handleInput("aboutMe")}></textarea>
-                        </label>
-                        <button onClick={this.demoSubmit}>Demo Sign Up</button>
-                        <button onClick={this.handleSubmit}>Sign Up</button>
+                            {this.state.pError ? <p className="errors">Your password must be at least 8 characters long</p> : null}
+                        <button className="LS_button" onClick={this.demoSubmit}>Demo Sign Up</button>
+                        <button className="LS_button" onClick={this.handleSubmit}>Sign Up</button>
+                        <div class="bottom_test"><p>Aleady have an account? <Link className="link_with_no_underLine" style={{ color: '#1167cf'}} to="/login">Log in</Link> </p></div>
                     </form>
                 </div>
             )
-        }
-
     }
 }
 

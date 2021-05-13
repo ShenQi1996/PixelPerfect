@@ -1,0 +1,75 @@
+.LS_form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 600px;
+  background-color: rgb(247, 248, 250);
+}
+
+.LS_form {
+  padding: 20px;
+  background: white;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.LS_form > h2 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.LS_form > label {
+  color: #85738e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 18px;
+}
+
+.LS_form .LS_Input {
+  width: 350px;
+  height: 40px;
+  border: 1px solid lightgray;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.LS_button {
+  width: 90%;
+  color: white;
+  background: #1167cf;
+  border-radius: 30px;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.LS_button:hover {
+  background: #2986f7;
+  cursor: pointer;
+}
+
+.errors {
+  color: red;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.bottom_test {
+  font-size: 20px;
+  color: #85738e;
+}
+
+// .look p {
+//   border-bottom: 1px solid lightgray;
+//   font-size: 30px;
+// }

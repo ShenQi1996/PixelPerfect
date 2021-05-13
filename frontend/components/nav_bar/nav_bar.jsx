@@ -1,23 +1,33 @@
 import React from "react"
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-const NavBar = ({currentUser, logoutUser}) =>{
-    const display = currentUser ? (
+const NavBar = (props) =>{
+    const display = props.currentUser ? (
         <div>
-            <h1>welcome {currentUser.username}</h1>
-            <button onClick={logoutUser}>LogOut</button>
+            <h1>Welcome User</h1>
+            <button onClick={props.logoutUser}>LogOut</button>
         </div>
     ) : (
-        <div>
-            <Link to="/signup">SignUp</Link>
-            <Link to="/login">LogIn</Link>
+        <div className="nav_bar_box3">
+            <NavLink activeClassName="active_nav" className="nav_buttom" to="/login">Log In</NavLink>
+            <NavLink activeClassName="active_nav" className="nav_buttom" to="/signup">Sign Up</NavLink>
         </div>
     )
     return(
         <header>
-            <h1>Logo</h1>
-            <div>
-                {display}
+            <div className="nav_bar_container">
+                <div className="nav_bar_box1">
+                    <Link className="logo" to="/">PixelPerfect</Link> 
+                    <div className="nav_box_link">
+                        <div>
+                            <NavLink className="nav_links" to="/" >Home</NavLink>
+                            <NavLink className="nav_links" to="/">Discover</NavLink>
+                        </div>
+                    </div>
+                </div>
+                <div className="nav_bar_box2">
+                    {display}
+                </div>
             </div>
         </header>
     )
