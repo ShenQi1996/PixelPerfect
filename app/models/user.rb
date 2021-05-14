@@ -9,7 +9,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
-    #has_many
+    has_many :pictures,
+        foreign_key: :ownerId,
+        class_name: :Picture
+
 
 
     def self.find_by_credentials(email, password)

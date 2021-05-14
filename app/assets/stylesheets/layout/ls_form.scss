@@ -6,6 +6,7 @@
   height: 100vh;
   min-height: 600px;
   background-color: rgb(247, 248, 250);
+  font-family: "Roboto", sans-serif;
 }
 
 .LS_form {
@@ -19,17 +20,16 @@
   flex-direction: column;
 }
 
-.LS_form > h2 {
-  font-size: 30px;
-  margin-top: 10px;
-}
-
 .LS_form > label {
   color: #85738e;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   font-size: 18px;
+}
+.LS_form > h2 {
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 .LS_form .LS_Input {
@@ -47,10 +47,10 @@
   background: #1167cf;
   border-radius: 30px;
   border: none;
-  padding-top: 15px;
   padding-bottom: 15px;
-  font-size: 17px;
+  padding-top: 15px;
   font-weight: bold;
+  font-size: 17px;
 }
 
 .LS_button:hover {

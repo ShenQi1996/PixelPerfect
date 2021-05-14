@@ -15,6 +15,7 @@
   padding-left: 30px;
   padding-right: 30px;
   padding: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 .nav_bar_box1 {
@@ -23,23 +24,20 @@
   text-align: center;
 }
 
-.nav_bar_box2 {
-}
-
 .nav_bar_box3 {
   display: flex;
   text-align: center;
 }
 
 .nav_buttom {
-  font-size: 20px;
-  font-weight: bolder;
+  font-size: 16px;
+  font-weight: bold;
   border-radius: 25px;
   border: none;
-  height: 20px;
+  height: 18px;
   text-decoration: none;
   color: black;
-  padding: 5px 15px 5px 15px;
+  padding: 8px 15px 5px 15px;
   margin-right: 10px;
 }
 

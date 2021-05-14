@@ -10,3 +10,7 @@ fixt error ==  go to the config not the one in app.    then environments then pr
 
 create the databacse on the heroku side.  == heroku run bundle exec rails db:migrate
                                             heroku run bundle exec rails db:seed
+
+
+
+userful :     sudo service postgresql start 

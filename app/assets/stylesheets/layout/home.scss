@@ -1,46 +1,45 @@
 .body_box {
   position: relative;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.top-image {
+.top_image_box {
   background-image: image-url("Home/Home.png");
   background-size: cover;
   display: inline-block;
   position: relative;
+  padding-top: 100vh;
   width: 100vw;
-  padding-top: calc(0.46 * 100vw);
 }
 
-.top-image .top-image-content {
+.top_image_box .top_image_content {
   display: inline-block;
   position: absolute;
   top: 30%;
   left: 15%;
   max-width: 30%;
   text-align: left;
-  opacity: 0.9;
   padding: 30px 30px;
   border-radius: 10px;
 }
 
-.top-image-content > h2 {
+.top_image_content > h2 {
   font-size: 50px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
   color: black;
   margin-bottom: 15px;
   line-height: 110%;
 }
 
-.top-image-content > p {
+.top_image_content > p {
   font-size: 20px;
   color: black;
   margin-bottom: 10px;
   line-height: 120%;
 }
 
-.top-image-content > button {
+.top_image_content > button {
   font-size: 24px;
   border-radius: 40px;
   padding: 5px 15px 5px 15px;
@@ -49,107 +48,108 @@
   border: none;
 }
 
-.top-image-content > button:hover {
-  filter: brightness(80%);
+.top_image_content > button:hover {
+  filter: brightness(85%);
   cursor: pointer;
 }
 
-.about-pinhole {
+.about_content_box {
   margin: auto;
 }
 
-.about-pinhole > h3 {
+.about_content_box > h3 {
   text-align: center;
-  font-size: 50px;
   font-weight: bolder;
+  font-size: 50px;
   line-height: 200%;
   margin-bottom: 40px;
 }
 
-.about-pinhole .about-content {
+.about_content_box .about_content {
   display: inline-block;
   width: 28%;
   font-size: 20px;
-  padding: 10px;
   vertical-align: top;
+  padding: 10px;
   margin-left: 3%;
 }
 
-.about-content > h4 {
-  font-size: 24px;
+.about_content > p {
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.about_content > h4 {
   font-weight: bolder;
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
-.about-content > p {
-  font-size: 20px;
-  line-height: 120%;
+.ruler {
+  display: block;
+  background-image: image-url("Home/Ruler.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
 }
 
 .plant {
   display: block;
   background-image: image-url("Home/Plant.png");
-  background-repeat: no-repeat;
   background-size: contain;
-  width: calc(0.1 * 600px);
-  height: calc(0.1 * 600px);
-  margin-bottom: 10px;
-}
-.ruler {
-  display: block;
-  background-image: image-url("Home/Ruler.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  width: calc(0.1 * 600px);
-  height: calc(0.1 * 600px);
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 .statistics {
   display: block;
   background-image: image-url("Home/Statistics.png");
-  background-repeat: no-repeat;
   background-size: contain;
-  width: calc(0.1 * 600px);
-  height: calc(0.1 * 600px);
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 
-.bottom-bar {
+.content_box_container {
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: #45457c;
   padding-top: 40px;
+  justify-content: center;
   padding-bottom: 50px;
   margin-top: 20px;
 }
-.bottom-bar-content {
-  display: flex;
+.content_box {
   justify-content: center;
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.bottom-bar-content > h3 {
-  color: white;
+.content_box > h3 {
   font-weight: bolder;
+  color: white;
   font-size: 40px;
   margin-bottom: 20px;
   text-align: center;
 }
-.bottom-bar-content > p {
+.content_box > p {
   color: white;
   font-weight: lighter;
-  font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
   width: 60%;
+  font-size: 20px;
 }
 
-.bottom-bar-content > button {
+.content_box > button {
+  padding: 5px 15px 5px 15px;
   font-size: 24px;
   border-radius: 40px;
-  padding: 5px 15px 5px 15px;
   width: 220px;
   height: 60px;
   color: black;
@@ -157,15 +157,15 @@
   border: none;
 }
 
-.bottom-bar-content > button:hover {
+.content_box > button:hover {
   color: #1890ff;
   cursor: pointer;
 }
 
 div footer {
+  font-size: 16px;
   display: flex;
   justify-content: center;
-  font-size: 16px;
   text-transform: uppercase;
   padding: 24px;
 }
