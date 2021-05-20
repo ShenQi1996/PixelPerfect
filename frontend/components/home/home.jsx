@@ -47,9 +47,34 @@ const Home = () =>{
             <button><Link to='/signup' className="link_with_no_underLine" >Sign up</Link></button>
           </div>
         </div>
+        <div className="content_box_container2">
+            <div className="content_box2">
+                <h1>Social</h1>
+                <ul>
+                  <li>
+                  <i className="fab fa-github"></i>
+                    <a href="">Github</a>
+                  </li>
+                  <li>
+                  <i className="fab fa-linkedin"></i>
+                    <a href="">LinkedIn</a>
+                  </li>
+                </ul>
+            </div>
+            <div className="content_box2">
+                <h1>Community</h1>  
+                <ul>
+                  <li>
+                    <a href="">Discover</a>
+                  </li>
+                </ul>
+            </div>
+        </div>
         <div>
           <footer>
-            PixelPerfect - 2021
+            <div>
+              PixelPerfect - 2021
+            </div>
           </footer>
         </div>
       </div>

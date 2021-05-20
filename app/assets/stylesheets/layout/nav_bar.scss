@@ -1,3 +1,12 @@
+header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background: #ffffff;
+  top: 0;
+  box-shadow: 2px 2px rgba(211, 211, 211, 0.26);
+}
+
 .logo {
   font-size: 30px;
   font-weight: bolder;
@@ -5,6 +14,10 @@
   text-decoration: none;
   padding-right: 20px;
   cursor: pointer;
+  padding-left: 50px;
+}
+.logo:hover {
+  color: #1890ff;
 }
 
 .nav_bar_container {
@@ -12,7 +25,6 @@
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
-  padding-left: 30px;
   padding-right: 30px;
   padding: 20px;
   font-family: "Roboto", sans-serif;
@@ -24,9 +36,12 @@
   text-align: center;
 }
 
-.nav_bar_box3 {
+.nav_bar_box3,
+.nav_bar_box2 {
   display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav_buttom {
@@ -39,6 +54,10 @@
   color: black;
   padding: 8px 15px 5px 15px;
   margin-right: 10px;
+}
+
+.nav_border {
+  border: 2px solid black;
 }
 
 .nav_buttom:hover {
@@ -66,4 +85,54 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
+}
+
+// dropdown
+
+.profile_container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-right: 20px;
+}
+
+.profile_dropdown {
+  position: absolute;
+  display: none;
+  &.toggle {
+    display: block;
+    border-radius: 10px;
+    box-sizing: content-box;
+    width: 180px;
+    z-index: 1; //  need some more work for this
+    background-color: white;
+    margin-top: 2px;
+    margin-left: -20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    box-shadow: 2px 2px 2px 2px lightgray;
+    border: none;
+  }
+}
+
+.profile_Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile_dropdown > li {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px 20px;
+  color: black;
+}
+
+.profile_dropdown li:hover {
+  background: #216feb;
+  color: white;
+}
+
+.profile_logo {
+  color: #b9c1c7;
+  font-size: 30px;
 }

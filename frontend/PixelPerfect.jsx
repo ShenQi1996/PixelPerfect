@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if(window.currentUser){
     let oldState;
     oldState = {
-      session: {currentUser: window.currentUser.id},
+      session: {currentUser: window.currentUser},
       entities: {
         users: { [window.currentUser.id]: window.currentUser}
       },

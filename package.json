@@ -25,7 +25,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development ",
-    "build": "webpack --mode=production"  
+    "build": "webpack --mode=production",
+    "start": "sudo service postgresql start"  
   },
   "repository": {
     "type": "git",

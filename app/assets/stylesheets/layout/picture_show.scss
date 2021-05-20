@@ -1,0 +1,83 @@
+.picture_show_container {
+  background-color: #222222;
+  padding-top: 10px;
+  margin-top: 4%;
+}
+
+.picture_show_box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+  padding-bottom: 40px;
+}
+
+.picture_show_img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+  max-height: 500px;
+  min-height: 500px;
+}
+
+.fa-arrow-left {
+  color: white;
+  font-size: 20px;
+  margin-left: 60px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.fa-arrow-left:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  opacity: 1;
+  padding: 5px;
+}
+
+.picture_show_info {
+  background-color: #f7f8fa;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.picture_info {
+  width: 80%;
+  background-color: white;
+  div > h5 {
+    font-size: 30px;
+  }
+  div > p {
+    font-size: 20px;
+    padding: 20px;
+  }
+}
+
+.like_button {
+  border: none;
+  font-size: 30px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.picture_info {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.picture_info_box2 {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  h5 {
+    margin-left: 20px;
+  }
+  .profile_logo {
+    font-size: 50px;
+  }
+}

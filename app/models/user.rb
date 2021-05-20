@@ -13,6 +13,9 @@ class User < ApplicationRecord
         foreign_key: :ownerId,
         class_name: :Picture
 
+    has_many :likes,
+        foreign_key: :userId,
+        class_name: :Like
 
 
     def self.find_by_credentials(email, password)

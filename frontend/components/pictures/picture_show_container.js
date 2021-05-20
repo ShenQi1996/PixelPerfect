@@ -1,19 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchPicture } from "../../actions/picture_action";
+import { fetchlikes, createLike, deleteLike } from "../../actions/like_action";
 import PictureShow from "./picture_show";
 
-const mSTP = (state = {}, ownsProps) => {
-  console.log(`this is the state`);
-  console.log(state);
+const mSTP = (state, ownProps) => {
+  // console.log("I am in the show page container");
+  // // console.log(state);
+  // console.log(ownProps);
+
   return {
-    picture: state.entities.pictures[1],
+    picture: state.entities.pictures[ownProps.match.params.pictureId],
+    like: Object.values(state.entities.like),
+    session: state.session.currentUser,
   };
 };
 
-const mDTP = dispatch => ({
-  fetchPicture: pictureId => dispatch(fetchPicture(pictureId)),
-});
+const mDTP = dispatch => {
+  return {
+    fetchPicture: pictureId => dispatch(fetchPicture(pictureId)),
+    fetchlikes: () => dispatch(fetchlikes()),
+    createLike: (userId, pictureId) => dispatch(createLike(userId, pictureId)),
+    deleteLike: likeId => dispatch(deleteLike(likeId)),
+  };
+};
 
 export default connect(mSTP, mDTP)(PictureShow);
-console;

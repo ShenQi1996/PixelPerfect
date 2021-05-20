@@ -89,9 +89,9 @@ class Signup extends React.Component{
                             <input className="LS_Input" type="text" value={this.state.email} onChange={this.handleInput("email")} />
                         </label>
                             {this.state.eError ? <p className="errors">Please enter a valid email address</p> : null}
-                        {/* <label>Username
-                            <input type="text" value={this.state.username} onChange={this.handleInput("username")} />
-                        </label> */}
+                        <label>Username
+                            <input className="LS_Input" type="text" value={this.state.username} onChange={this.handleInput("username")} />
+                        </label>
                         <label>Password
                             <input className="LS_Input" type="password" value={this.state.password} placeholder="(minimum 8 characters)" onChange={this.handleInput("password")} />
                         </label>

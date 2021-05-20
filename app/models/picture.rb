@@ -6,5 +6,9 @@ class Picture < ApplicationRecord
         class_name: :User
 
 
+    has_many :likes,
+        foreign_key: :pictureId,
+        class_name: :Like
+
     has_one_attached :photo     #Photo can be change to anything      
 end

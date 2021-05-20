@@ -1,2 +1,2 @@
-json.extract! @picture, :id, :title, :ownerId
+json.extract! @picture, :id, :title, :private, :description, :ownerId
 json.pictureUrl url_for(@picture.photo)
