@@ -1,11 +1,11 @@
 # PixelPerfect 
 
-PiexlPerfect is a functional clone of 500xp has most of the functions of the orgin site. Is a network for artis to display their art work and their love with the fantasy world.
+PiexlPerfect is a functional clone of 500px has most of the functions of the orgin site. Is a network for artis to display their art work and their love with the fantasy world.
  This is a single page application build using React/Redux, Javascript, Ruby on Rails, and PostgreSQL and allow users to sign up and login to an account to view arts, user can also upload arts and like other peoples art.
  
  # Demo
  
-https://pixelperfectsam.herokuapp.com/#/
+[PiexlPerfect](https://pixelperfectsam.herokuapp.com/#/)
 
 
 # Technologies
