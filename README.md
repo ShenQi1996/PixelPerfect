@@ -65,7 +65,8 @@ PiexlPerfect is a functional clone of 500px has most of the functions of the org
 ```
 *  All user arts are accessible through the discover page
 
-![122](https://user-images.githubusercontent.com/68937006/119150098-1f2fa980-ba1c-11eb-9ce9-c6de23ddda38.PNG)
+![asdasdas](https://user-images.githubusercontent.com/68937006/119151893-cbbe5b00-ba1d-11eb-944c-5ac22dfab1ba.PNG)
+
 
 ```
             <div className="upload_container">
