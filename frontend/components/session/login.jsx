@@ -31,8 +31,8 @@ class Login extends React.Component{
     demoSubmit(e){
         e.preventDefault()
         const demoUser ={
-            email: "test@gmail.com",
-            password: "12345678"
+            email: "tester@gmail.com",
+            password: "123456789"
         }
         this.props.loginUser(demoUser)
     }

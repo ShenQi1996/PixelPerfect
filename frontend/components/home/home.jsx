@@ -8,7 +8,7 @@ const Home = () =>{
       <div className="body_box">
         <div className="top_image_box">
           <div className="top_image_content">
-              <h2>Discover and share the wrold you envision</h2>
+              <h2>Discover and share the world you envision</h2>
               <p>Get inspired with incredible arts from diverse styles and genres
                   around the world.  We're not guided by fads - just great artist.</p>
                   <button><Link to="/signup" className="link_with_no_underLine">Sign up</Link></button>
@@ -53,11 +53,11 @@ const Home = () =>{
                 <ul>
                   <li>
                   <i className="fab fa-github"></i>
-                    <a href="">Github</a>
+                    <a href="https://github.com/ShenQi1996">Github</a>
                   </li>
                   <li>
                   <i className="fab fa-linkedin"></i>
-                    <a href="">LinkedIn</a>
+                    <a href="www.linkedin.com/in/shenqi1993">LinkedIn</a>
                   </li>
                 </ul>
             </div>
@@ -65,7 +65,7 @@ const Home = () =>{
                 <h1>Community</h1>  
                 <ul>
                   <li>
-                    <a href="">Discover</a>
+                    <Link className="link_with_no_underLine" to="/Discover">Discover</Link>
                   </li>
                 </ul>
             </div>

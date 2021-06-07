@@ -56,9 +56,9 @@ class Signup extends React.Component{
     demoSubmit(e){
         e.preventDefault()
         const demoUser ={
-            username: "test1",
-            email: "test@gmail.com",
-            password: "12345678"
+            username: "test0",
+            email: "test0@gmail.com",
+            password: "123456789"
         }
         this.props.createNewUser(demoUser)
     }
