@@ -38,6 +38,7 @@ This is a single page application build using React/Redux, Javascript, Ruby on R
 # Features
 
 *  Users able to create accounts to upload and like pictures
+    * Create new user or log in user 
 
  ![11212asd](https://user-images.githubusercontent.com/68937006/119150003-0aebac80-ba1c-11eb-901f-be18fc98d0be.PNG)
  
@@ -83,6 +84,7 @@ This is a single page application build using React/Redux, Javascript, Ruby on R
 ```
 
 *  User can not like their own art
+    * like will be disable in the show page
 
 ![zxczxczxc](https://user-images.githubusercontent.com/68937006/119150131-2787e480-ba1c-11eb-8695-1c26c1660cbb.PNG)
 
@@ -97,6 +99,7 @@ This is a single page application build using React/Redux, Javascript, Ruby on R
 
 ```
 *  User have thier own profile page with all of their arts
+    * profile page will not show likes 
 
 ![asdasdasdcvcx](https://user-images.githubusercontent.com/68937006/119150153-2c4c9880-ba1c-11eb-8fe3-f7aa8641828b.PNG)
 
