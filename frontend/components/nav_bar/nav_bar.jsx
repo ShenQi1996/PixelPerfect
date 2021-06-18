@@ -2,11 +2,11 @@ import React from "react"
 import { Link, NavLink } from 'react-router-dom';
 import ProfileDropDowm from "./profile_dropdown"
 
-const NavBar = (props) =>{
+const NavBar = (props) => {
     const display = props.currentUser ? (
         <div className="nav_bar_box2">
-            <ProfileDropDowm logoutUser={props.logoutUser}  currentUserId={props.currentUser.id}/>
-            <NavLink  className="nav_buttom nav_border" to="/upload"><i class="fas fa-arrow-up"></i> Upload</NavLink>
+            <ProfileDropDowm logoutUser={props.logoutUser} currentUserId={props.currentUser.id} />
+            <NavLink className="nav_buttom nav_border" to="/upload"><i className="fas fa-arrow-up"></i> Upload</NavLink>
         </div>
     ) : (
         <div className="nav_bar_box3">
@@ -16,11 +16,11 @@ const NavBar = (props) =>{
     )
 
     const logoLink = props.currentUser ? (
-        <Link className="logo" to="/homefeed">PixelPerfect</Link> 
+        <Link className="logo" to="/homefeed">PixelPerfect</Link>
     ) : (
-        <Link className="logo" to="/">PixelPerfect</Link> 
+        <Link className="logo" to="/">PixelPerfect</Link>
     )
-    return(
+    return (
         <header>
             <div className="nav_bar_container">
                 <div className="nav_bar_box1">
@@ -28,6 +28,8 @@ const NavBar = (props) =>{
                     <div className="nav_box_link">
                         <div>
                             <NavLink className="nav_links" to="/Discover">Discover</NavLink>
+                            <a className="nav_links" href="https://linkedin.com/in/shenqi1993" target="_blank">Linkedin</a>
+                            <a className="nav_links" href="https://github.com/ShenQi1996" target="_blank">Github</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const ProfileDropDowm = (props) => {
@@ -7,7 +7,7 @@ const ProfileDropDowm = (props) => {
         $('.profile_dropdown').toggleClass('toggle')
     }
 
-    return(
+    return (
         <div className="profile_container" onClick={dropDownToggle} >
             <div>
                 <i className="fas fa-user-circle profile_logo"></i>
