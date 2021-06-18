@@ -59,6 +59,10 @@ const Home = () => {
               <i className="fab fa-linkedin"></i>
               <a href="https://linkedin.com/in/shenqi1993" target="_blank">LinkedIn</a>
             </li>
+            <li>
+              <i class="fas fa-user-friends"></i>
+              <a href="https://my-won-website.web.app" target="_blank">Portfolio </a>
+            </li>
           </ul>
         </div>
         <div className="content_box2">
