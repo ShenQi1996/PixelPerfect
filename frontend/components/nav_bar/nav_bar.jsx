@@ -27,7 +27,7 @@ const NavBar = (props) => {
                     {logoLink}
                     <div className="nav_box_link">
                         <div>
-                            <NavLink className="nav_links" to="/Discover">Discover</NavLink>
+                            <NavLink className="nav_links" to="/homefeed">HomeFeed</NavLink>
                             <a className="nav_links" href="https://linkedin.com/in/shenqi1993" target="_blank">Linkedin</a>
                             <a className="nav_links" href="https://github.com/ShenQi1996" target="_blank">Github</a>
                             <a className="nav_links" href="https://my-won-website.web.app" target="_blank">Portfolio </a>

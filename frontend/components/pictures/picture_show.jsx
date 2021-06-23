@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Redirect } from 'react-router-dom';
 
 class PictureShow extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            id: "",
+        }
         this.handleback = this.handleback.bind(this)
+        // this.handleprofile = this.handleprofile(this)
     }
 
     componentDidMount() {
@@ -19,9 +23,9 @@ class PictureShow extends React.Component {
     toggleLike() {
         let liked = false
         let pictureLiked = []
-        for (let i = 0; i < this.props.like.length; i++) {
-            if (this.props.like && this.props.picture.id === this.props.like[i].pictureId) {
-                pictureLiked.push(this.props.like[i].id)
+        for (let i = 0; i < this.props.likes.length; i++) {
+            if (this.props.likes && this.props.picture.id === this.props.likes[i].pictureId && this.props.session.id == this.props.likes[i].userId) {
+                pictureLiked.push(this.props.likes[i].id)
                 liked = true
             }
         }
@@ -57,7 +61,7 @@ class PictureShow extends React.Component {
         // console.log(`I am in the picture show page`)
         // console.log(this.props)
         // debugger
-
+        // console.log(picture)
         return (
             <div>
                 <div className="picture_show_container">
@@ -75,7 +79,7 @@ class PictureShow extends React.Component {
                         {this.isUser()}
                         <div className="picture_info_box1">
                             <div className="picture_info_box2">
-                                <i className="fas fa-user-circle profile_logo"></i>
+                                <i onClick={() => this.props.history.push(`/users/${picture.ownerId}`)} className="fas fa-user-circle profile_logo"></i>
                                 <h5>{picture.title}</h5>
                             </div>
                             <p>{picture.description}</p>

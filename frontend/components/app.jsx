@@ -9,19 +9,21 @@ import PictureShowContainer from "./pictures/picture_show_container";
 import HomeFeed from "./home_feel/home_feel_container";
 import ProfileContainer from "./profile/profile_container"
 import Home from './home/home';
-import {AuthRoute, ProtectedRoute} from '../util/route_util'
+import { AuthRoute, ProtectedRoute } from '../util/route_util'
+import UserContainer from "./profile/user_container"
 
- const App = () => (
+const App = () => (
     <div>
         <Route path="/" component={NavBarContainer} />
-        <Route exact path="/Discover" component={PictureIndexContainer}/>
-        <AuthRoute path="/signup" component={SignupContainer}/>
-        <AuthRoute path="/login" component={LoginContainer}/>
-        <Route exact path="/" component={Home}/>
-        <ProtectedRoute  exact path="/upload" component={UploadPageContainer}/>
+        <Route exact path="/Discover" component={PictureIndexContainer} />
+        <AuthRoute path="/signup" component={SignupContainer} />
+        <AuthRoute path="/login" component={LoginContainer} />
+        <Route exact path="/" component={Home} />
+        <ProtectedRoute exact path="/upload" component={UploadPageContainer} />
         <Route exact path="/pictures/:pictureId" component={PictureShowContainer} />
         <ProtectedRoute exact path="/homefeed" component={HomeFeed} />
         <ProtectedRoute path="/profile/:userId" component={ProfileContainer} />
+        <ProtectedRoute path="/users/:userId" component={UserContainer} />
     </div>
 )
 

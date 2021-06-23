@@ -89,6 +89,7 @@
   font-size: 20px;
   padding-left: 15px;
   padding-right: 10px;
+  font-family: cursive;
 }
 
 .upload_textarea {
@@ -97,6 +98,7 @@
   width: 350px;
   font-size: 20px;
   padding: 15px 10px 15px 15px;
+  font-family: cursive;
 }
 
 .upload_button_upload {
@@ -131,6 +133,7 @@
   width: 80%;
   height: 80%;
   display: inline-block;
+  object-fit: contain;
 }
 
 .home_fee_p {

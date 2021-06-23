@@ -2,15 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 import { createPicture } from "../../actions/picture_action";
 import UploadPage from "./upload_page";
+import { withRouter } from "react-router";
 
 const mSTP = (state = {}) => {
   // console.log(state);
   return {
-    picture: {
-      title: "",
-      description: "",
-      ownerId: state.session.currentUser.id,
-    },
+    picture: state.entities.pictures,
+    currentUser: state.session.currentUser.id
+      // title: "",
+      // description: "",
+      // ownerId: state.session.currentUser.id,
+    // },
   };
 };
 
@@ -20,4 +22,4 @@ const mDTP = dispatch => {
   };
 };
 
-export default connect(mSTP, mDTP)(UploadPage);
+export default withRouter(connect(mSTP, mDTP)(UploadPage));

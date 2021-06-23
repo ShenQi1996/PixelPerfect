@@ -1,64 +1,63 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const PictureItem = (props) => {
-    const {picture} = props
+    const { likes, session, picture } = props
+    if (session.loggedIn == true) {
 
-     if(props.loggedIn == true){
-
-        const toggleLike = () =>{
+        const toggleLike = () => {
             let liked = false
             let pictureLiked = []
-            for(let i = 0; i < props.like.length; i++ ){
-                if(props.like && props.picture.id === props.like[i].pictureId){
-                    pictureLiked.push(props.like[i].id)
+            for (let i = 0; i < likes.length; i++) {
+                if (likes && picture.id === likes[i].pictureId && likes[i].userId === session.currentUser.id) {
+                    pictureLiked.push(likes[i].id)
                     liked = true
                 }
             }
-            return(
+            return (
                 <div className="like_button_box_for_index">
                     {
-                        liked ? 
+                        liked ?
                             <button id="heart">
-                              <i className="fas fa-heart"></i>
+                                <i className="fas fa-heart"></i>
                             </button> :
                             <button id="heart">
-                               <i className="far fa-heart"></i>
+                                <i className="far fa-heart"></i>
                             </button>
                     }
                 </div>
             )
         }
         const isUser = () => {
-            if(props.session.id == props.picture.ownerId){
+            if (session.currentUser.id == picture.ownerId) {
                 return null
-            }else{
+            } else {
                 return toggleLike()
             }
         }
 
-        return(
+        return (
             <li className="picture_item">
-                <Link  to={`/pictures/${picture.id}`}> 
+                <Link to={`/pictures/${picture.id}`}>
                     <div className="overlay">
                         {isUser()}
                     </div>
-                    <img className="picture_img" src={picture.pictureUrl} alt="" /> 
+                    <img className="picture_img" src={picture.pictureUrl} alt="" />
                 </Link>
             </li>
-          
+
         )
-     }else{
-         return(
+    } else {
+        return (
             <li className="picture_item">
-            <Link  to={`/pictures/${picture.id}`}> 
-                <div className="overlay">
-                </div>
-                <img className="picture_img" src={picture.pictureUrl} alt="" /> 
-            </Link>
-        </li>
-         )
-     }
+                <Link to={`/pictures/${picture.id}`}>
+                    <div className="overlay">
+                    </div>
+                    <img className="picture_img" src={picture.pictureUrl} alt="" />
+                </Link>
+            </li>
+        )
+    }
 }
 
 

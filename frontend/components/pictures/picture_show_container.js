@@ -4,6 +4,7 @@ import { fetchPicture } from "../../actions/picture_action";
 import { fetchlikes, createLike, deleteLike } from "../../actions/like_action";
 import PictureShow from "./picture_show";
 
+
 const mSTP = (state, ownProps) => {
   // console.log("I am in the show page container");
   // // console.log(state);
@@ -11,7 +12,7 @@ const mSTP = (state, ownProps) => {
 
   return {
     picture: state.entities.pictures[ownProps.match.params.pictureId],
-    like: Object.values(state.entities.like),
+    likes: Object.values(state.entities.likes),
     session: state.session.currentUser,
   };
 };

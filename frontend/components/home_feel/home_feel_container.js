@@ -9,9 +9,8 @@ const mSTP = state => {
   // console.log(state);
   return {
     pictures: Object.values(state.entities.pictures),
-    loggedIn: Boolean(state.session.currentUser),
-    like: Object.values(state.entities.like),
-    session: state.session.currentUser,
+    likes: Object.values(state.entities.likes),
+    session: state.session,
   };
 };
 

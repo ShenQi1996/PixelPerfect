@@ -11,7 +11,7 @@ class Api::LikesController < ApplicationController
     def create
         # debugger
         @like = Like.new(like_params)
-        if@like.save
+        if@like.save!
             render "api/likes/show"
         else
             render json: @like.errors.full_messages, status: 401

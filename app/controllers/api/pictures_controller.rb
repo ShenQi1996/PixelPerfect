@@ -23,7 +23,7 @@ class Api::PicturesController < ApplicationController
    end
 
    def destroy
-        debugger
+        # debugger
         @picture = Picture.find(params[:id])
         if @picture.ownerId == current_user.id
             @picture.destroy
