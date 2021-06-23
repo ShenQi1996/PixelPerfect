@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+
 
 
 
@@ -69,7 +70,7 @@ const Home = () => {
           <h1>Community</h1>
           <ul>
             <li>
-              <Link className="link_with_no_underLine" to="/Discover">Discover</Link>
+              <NavLink className="link_with_no_underLine" to="/homefeed">HomeFeed</NavLink>
             </li>
           </ul>
         </div>
