@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchPicture } from "../../actions/picture_action";
 import { fetchlikes, createLike, deleteLike } from "../../actions/like_action";
 import PictureShow from "./picture_show";
+import {fetchUser} from "../../actions/user_action";
 
 
 const mSTP = (state, ownProps) => {
@@ -23,6 +24,7 @@ const mDTP = dispatch => {
     fetchlikes: () => dispatch(fetchlikes()),
     createLike: (userId, pictureId) => dispatch(createLike(userId, pictureId)),
     deleteLike: likeId => dispatch(deleteLike(likeId)),
+    fetchUser: (userId)=> dispatch(fetchUser(userId)),
   };
 };
 

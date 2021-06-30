@@ -32,7 +32,7 @@ class ProfilePage extends React.Component {
         const { likes, pictures } = this.props
         // const pictures = users.pictures
 
-        console.log(this.props)
+        // console.log(this.props)
 
         if (!this.state.NextTap) {
             const userPic = pictures.filter(picture => picture.ownerId == this.props.session.currentUser.id)
@@ -64,12 +64,14 @@ class ProfilePage extends React.Component {
             const userPic = likes.filter(like => like.userId == this.props.session.currentUser.id)
             let likePic = [];
             for (let i = 0; i < userPic.length; i++) {
-                if (userPic[i].pictureId == pictures[i].id) {
-                    likePic.push(pictures[i])
+                for (let j = 0; j < pictures.length; j++) {
+                    if (userPic[i].pictureId == pictures[j].id) {
+                        likePic.push(pictures[j])
+                    }
                 }
             }
 
-            console.log(likePic)
+            // console.log(likePic)
             return (
                 <div className="upload_container">
                     <Link to="/homefeed">

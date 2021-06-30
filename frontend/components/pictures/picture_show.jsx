@@ -49,8 +49,10 @@ class PictureShow extends React.Component {
         if (this.props.session === null) {
             return null
         } else if (this.props.session.id === this.props.picture.ownerId) {
+            () => this.props.fetchUser(this.props.picture.ownerId)
             return null
         } else {
+            () => this.props.fetchUser(this.props.picture.ownerId)
             return this.toggleLike()
         }
     }
@@ -59,9 +61,9 @@ class PictureShow extends React.Component {
         const { picture } = this.props
         if (!picture) return null
         // console.log(`I am in the picture show page`)
-        // console.log(this.props)
-        // debugger
-        // console.log(picture)
+        console.log(this.props)
+
+
         return (
             <div>
                 <div className="picture_show_container">
