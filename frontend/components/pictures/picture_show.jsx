@@ -14,11 +14,13 @@ class PictureShow extends React.Component {
     componentDidMount() {
         this.props.fetchPicture(this.props.match.params.pictureId)
         this.props.fetchlikes()
+        // this.props.fetchUser(this.props.picture.ownerId)
     }
 
     handleback() {
         this.props.history.goBack()
     }
+
 
     toggleLike() {
         let liked = false
@@ -49,21 +51,29 @@ class PictureShow extends React.Component {
         if (this.props.session === null) {
             return null
         } else if (this.props.session.id === this.props.picture.ownerId) {
-            () => this.props.fetchUser(this.props.picture.ownerId)
             return null
         } else {
-            () => this.props.fetchUser(this.props.picture.ownerId)
             return this.toggleLike()
         }
     }
+
+    // handleUser() {
+    //     if (this.props.picture === null) {
+    //         return null
+    //     }
+
+    //     return (
+    //         <div>
+    //             Username: { }
+    //         </div>
+    //     )
+    // }
 
     render() {
         const { picture } = this.props
         if (!picture) return null
         // console.log(`I am in the picture show page`)
-        console.log(this.props)
-
-
+        // console.log(this.props)
         return (
             <div>
                 <div className="picture_show_container">
@@ -81,6 +91,7 @@ class PictureShow extends React.Component {
                         {this.isUser()}
                         <div className="picture_info_box1">
                             <div className="picture_info_box2">
+                                {/* {this.handleUser()} */}
                                 <i onClick={() => this.props.history.push(`/users/${picture.ownerId}`)} className="fas fa-user-circle profile_logo"></i>
                                 <h5>{picture.title}</h5>
                             </div>

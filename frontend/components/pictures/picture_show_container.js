@@ -15,6 +15,7 @@ const mSTP = (state, ownProps) => {
     picture: state.entities.pictures[ownProps.match.params.pictureId],
     likes: Object.values(state.entities.likes),
     session: state.session.currentUser,
+    users: state.entities.users,
   };
 };
 
