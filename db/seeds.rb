@@ -13,6 +13,7 @@ require 'open-uri'
 User.destroy_all
 Picture.destroy_all
 Like.destroy_all
+Comment.destroy_all
 
 
 user1 = User.create!(email: 'tester@gmail.com', password:'123456789', username: 'Guest')

@@ -3,7 +3,7 @@
   padding-top: 10px;
   margin-top: 4%;
 }
-.picture_show_box1{
+.picture_show_box1 {
   margin-top: 10px;
 }
 
@@ -14,13 +14,13 @@
   background-color: #222222;
   padding-bottom: 40px;
 }
-
 .picture_show_img {
   display: block;
   max-width: 100%;
   object-fit: contain;
   max-height: 500px;
   min-height: 500px;
+  cursor: pointer;
 }
 
 .fa-arrow-left {
@@ -29,6 +29,7 @@
   margin-left: 60px;
   margin-bottom: 10px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .fa-arrow-left:hover {
@@ -40,7 +41,6 @@
 
 .picture_show_info {
   background-color: #f7f8fa;
-  height: 30vh;
   display: flex;
   justify-content: center;
   padding-top: 20px;
@@ -49,9 +49,9 @@
 }
 
 .picture_info {
-  width: 80%;
   background-color: white;
-  overflow: scroll;
+  overflow: hidden;
+  flex: 0.5;
   div > h5 {
     font-size: 30px;
   }
@@ -59,6 +59,12 @@
     font-size: 20px;
     padding: 20px;
   }
+}
+.picture_comments {
+  background-color: white;
+  margin-left: 2rem;
+  flex: 0.2.5;
+  padding: 2rem;
 }
 
 .like_button {
@@ -83,5 +89,41 @@
   }
   .profile_logo {
     font-size: 50px;
+    cursor: pointer;
+  }
+}
+
+.comment_info {
+  margin: 2rem;
+}
+
+.user_comment_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    font-weight: bolder;
+    font-size: larger;
+    font-family: "Roboto", sans-serif;
+  }
+  textarea {
+    width: 90%;
+    padding: 0.5rem;
+    font-size: larger;
+    margin: 1rem;
+    font-family: "Roboto", sans-serif;
+  }
+  button {
+    cursor: pointer;
+    width: 20%;
+    color: white;
+    background: #1167cf;
+    border-radius: 30px;
+    border: none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 17px;
   }
 }

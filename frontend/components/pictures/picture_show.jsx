@@ -6,14 +6,17 @@ class PictureShow extends React.Component {
         super(props)
         this.state = {
             id: "",
+            comment: "",
         }
         this.handleback = this.handleback.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
         // this.handleprofile = this.handleprofile(this)
     }
 
     componentDidMount() {
         this.props.fetchPicture(this.props.match.params.pictureId)
         this.props.fetchlikes()
+        this.props.fetchComments()
         // this.props.fetchUser(this.props.picture.ownerId)
     }
 
@@ -46,6 +49,19 @@ class PictureShow extends React.Component {
         )
     }
 
+    handleInput(type){
+        return e => {
+            this.setState({[type]: e.target.value})
+        }
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+       this.props.createComment(this.props.session.id,this.props.picture.id, this.props.session.username,this.state.comment).then(
+           this.setState({comment: ""})
+       )
+    }
+
     isUser() {
         // debugger
         if (this.props.session === null) {
@@ -55,6 +71,33 @@ class PictureShow extends React.Component {
         } else {
             return this.toggleLike()
         }
+    }
+
+    filter_comments(){
+        let Picture_Comments
+        if(this.props.comments.length === 0){
+            return(
+                <div></div>
+            )
+        }else{
+            Picture_Comments = this.props.comments.filter((comment, idx) => (
+                comment.pictureId === this.props.picture.id
+            )) 
+            return(
+                <div>
+                    <h1>{Picture_Comments.length} Comments</h1>
+                    {Picture_Comments.map((comment, idx) => (
+                        <div className="comment_info" key={idx}>
+                            <h2>
+                                {comment.username}
+                            </h2>
+                            {comment.comment}
+                        </div>
+                    ))}
+                </div>
+            )
+        }
+        
     }
 
     // handleUser() {
@@ -70,10 +113,15 @@ class PictureShow extends React.Component {
     // }
 
     render() {
-        const { picture } = this.props
+        const { picture, comments } = this.props
+
+        // let Picture_Comments = comments.filter((comment, idx) => (
+        //     comment.pictureId === picture.id
+        // )) 
+
+        console.log(this.props)
         if (!picture) return null
         // console.log(`I am in the picture show page`)
-        // console.log(this.props)
         return (
             <div>
                 <div className="picture_show_container">
@@ -97,6 +145,14 @@ class PictureShow extends React.Component {
                             </div>
                             <p>{picture.description}</p>
                         </div>
+                        <form className="user_comment_form">
+                            <label htmlFor="comment">comment:</label>
+                            <textarea name="comment" id="comment" rows="5" value={this.state.comment} onChange={this.handleInput("comment")}></textarea>
+                            <button  onClick={this.handleSubmit}>Submit</button>
+                        </form>
+                    </div>
+                    <div className="picture_comments">
+                        {this.filter_comments()}
                     </div>
                 </div>
             </div>

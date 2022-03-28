@@ -8,7 +8,6 @@ const likesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_LIKES:
-      // debugger
       // console.log("I am in the like reducer");
       // console.log(action.likes);
       return action.likes;
