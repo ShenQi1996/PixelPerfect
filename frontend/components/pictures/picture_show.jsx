@@ -7,9 +7,11 @@ class PictureShow extends React.Component {
         this.state = {
             id: "",
             comment: "",
+            showError: false,
         }
         this.handleback = this.handleback.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleError = this.handleError.bind(this)
         // this.handleprofile = this.handleprofile(this)
     }
 
@@ -57,6 +59,9 @@ class PictureShow extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        if(!this.state.comment){
+            this.setState({showError: true})
+        }
        this.props.createComment(this.props.session.id,this.props.picture.id, this.props.session.username,this.state.comment).then(
            this.setState({comment: ""})
        )
@@ -76,7 +81,7 @@ class PictureShow extends React.Component {
     filter_comments(){
         let Picture_Comments
         if(this.props.comments.length === 0){
-            return(
+            return (
                 <div></div>
             )
         }else{
@@ -100,6 +105,18 @@ class PictureShow extends React.Component {
         
     }
 
+    handleError(){
+        if(this.state.showError){
+            return (
+            <ul>
+                <li className="comment_error">Comment can not be empty</li>
+            </ul>
+            )
+        }else{
+            <div></div>
+        }
+    }
+
     // handleUser() {
     //     if (this.props.picture === null) {
     //         return null
@@ -113,13 +130,11 @@ class PictureShow extends React.Component {
     // }
 
     render() {
-        const { picture, comments } = this.props
+        const { picture } = this.props
 
         // let Picture_Comments = comments.filter((comment, idx) => (
         //     comment.pictureId === picture.id
         // )) 
-
-        console.log(this.props)
         if (!picture) return null
         // console.log(`I am in the picture show page`)
         return (
@@ -147,6 +162,7 @@ class PictureShow extends React.Component {
                         </div>
                         <form className="user_comment_form">
                             <label htmlFor="comment">comment:</label>
+                            {this.handleError()}
                             <textarea name="comment" id="comment" rows="5" value={this.state.comment} onChange={this.handleInput("comment")}></textarea>
                             <button  onClick={this.handleSubmit}>Submit</button>
                         </form>
